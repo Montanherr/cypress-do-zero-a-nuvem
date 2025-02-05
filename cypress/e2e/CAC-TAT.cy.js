@@ -18,5 +18,22 @@ it('Seleciona um produto (Mentoria) por seu valor (value)', () => {
     .should('have.value', 'mentoria')
 })
 
+it.only('selecione um produto (blog) por seu indice', () => {
+  cy.get('#product')
+  .select(1)
+  .should('have.value', 'blog')
+})
+
+it.only('marca o tipo de atendimento "Feedback"', () => {
+   cy.get('input[type="radio"][value="feedback"]')
+    .check()
+    .should('be.checked')
+})
+
+it.only('marca um meio de contato "Telefone"', () => {
+  cy.get('input[type="radio"][value="phone"]')
+  .check()
+  .should('be.checked')
+})
 
 })
